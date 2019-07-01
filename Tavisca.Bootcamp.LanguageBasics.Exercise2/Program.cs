@@ -1,5 +1,5 @@
 using System;
-namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
+namespace Tavisca.Bootcamp.LanguageBasics.Exercise2
 {
     public static class Program
     {
@@ -19,27 +19,11 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise1
             var showTimesCsv = string.Join(", ", showTimes);
             Console.WriteLine($"[{postTimesCsv}], [{showTimesCsv}] => {result}");
         }
-
-        public static bool isinvalid(string[] exactPostTime, string[] showPostTime)
-        {
-            for (int i = 0; i < exactPostTime.Length; i++) 
-            {
-                for (int j = i + 1; j < exactPostTime.Length; j++)
-                {
-                    if (exactPostTime[i] == exactPostTime[j])
-                    {
-                        if (showPostTime[i] != showPostTime[j])
-                            return true;
-                    }
-                }
-            }
-            return false;
-        }
         public static string GetCurrentTime(string[] exactPostTime, string[] showPostTime)
         {
             // Add your code here.
             //check for test case 3 where the case is invalid
-            if(isinvalid(exactPostTime,showPostTime))
+            if(Helper.IsInvalid(exactPostTime,showPostTime))
             {
                 return "impossible";
             }
